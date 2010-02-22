@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The MIRIAD MacPort Homepage</title>
+  <style type="text/css" media="all">
+    @import "style.css";
+  </style>
+</head>
+
+<body>
+<h1>The MIRIAD MacPort Homepage</h1>
+
+<p>This is the homepage of the <a href="http://www.macports.org/">MacPorts</a>
+package of the <a href="http://carma.astro.umd.edu/wiki/index.php/Miriad">MIRIAD</a>
+radio astronomy suite.</p>
+
+<p><b>This is not MIRIAD</b>. This is a system that makes it easy to
+install and update MIRIAD. For more information on MIRIAD, see:</p>
+<ol>
+<li><a href="http://carma.astro.umd.edu/wiki/index.php/Miriad">the MIRIAD wiki</a></li>
+<li><a href="http://carma.astro.umd.edu/miriad/">the CARMA MIRIAD site</a></li>
+<li><a href="http://www.mmarray.org/bugzilla/">the CARMA bugzilla</a>
+(which tracks MIRIAD bugs amongst others)</li>
+<li><a href="http://www.atnf.csiro.au/computing/software/miriad/">the homepage for
+the ATNF version of MIRIAD</a> (which this version is not)</li>
+</ol>
+
+<p><b>So what is the MIRIAD MacPort?</b> <a
+href="http://www.macports.org/">MacPorts</a> is a system to ease the
+installation and management of Unix-oriented software on Macintosh
+computers.  Since <a
+href="http://carma.astro.umd.edu/wiki/index.php/Miriad">MIRIAD</a> is
+hard to build and many astronomers have Mac laptops on which they want
+to run it, MacPorts is a useful way to make those people happy.</p>
+
+<p id="latest"><b>Current MacPorts version:</b>
+miriad 4.1.1.20091018 (<a href="#releases">info</a>)</p>
+
+<h2>Installation</h2>
+
+<p>Installation is about as easy as we can make it, but still
+nontrivial. The steps are:</p>
+<ol>
+<li>Make sure you will be able to leave your computer running for a few
+hours. The initial install does not need attention but will take a while
+to compile everything. (Updates are faster.)</li>
+<li>Install MacPorts using <a
+href="http://www.macports.org/install.php">these
+instructions</a>.</li>
+<li>Open a terminal. Which telescope will you be reducing data from?
+<ul>
+<li>The <a href="http://ral.berkeley.edu/ata/">Allen Telescope
+Array</a>: run <tt>sudo port -k install miriad</tt>.</li>
+<li><a href="http://www.mmarray.org/">CARMA</a>: run <tt>sudo port -k
+install miriad +carma</tt>.</li>
+<li>Anything else: <a href="#contact">contact the port maintainer</a>
+and ask for a variant to be created for your telescope.</li>
+</ul>
+</li>
+<li>Your computer will spend a long time whirring away and should eventually
+finish working without giving any error messages. If you see an error message,
+<a href="#contact">contact the port maintainer</a> with the exact text of
+the error.</li>
+</ol>
+
+<p>For general help, see <a
+href="http://trac.macports.org/#MacPortsSupport">the MacPorts support
+page</a>, which might have helpful information. That page, however,
+has no MIRIAD-specific information.</p>
+
+<h2>Updating</h2>
+
+<p>Once you have MIRIAD installed in this way, you can update your
+installation with the following steps:</p>
+
+<ol>
+<li>Open a terminal.</li>
+<li>Run <tt>sudo port sync</tt>.</li>
+<li>Run <tt>sudo port -k upgrade miriad</tt>. If nothing happens, you already
+have the most recent version of MIRIAD that's been pushed to the MacPorts
+tree.</li>
+</ol>
+
+<p>If you get an error, you might try opening a terminal and running:</p>
+
+<ol>
+<li><tt>sudo port selfupdate</tt></li>
+<li><tt>sudo port upgrade outdated</tt></li>
+</ol>
+
+<p>It is also good to run these commands once in a while even if you
+don't get any errors with MIRIAD. They may, however, take a long time
+to run.</p>
+
+<p>Updates to the MacPort version of MIRIAD will be pushed out approximately
+every month. Updates will be released more rapidly for key bugfixes to the
+tasks or build system &mdash; <a href="#contact">contact the port maintainer</a>
+to request an update. The tarballs that are pushed are produced by a
+<tt>make&nbsp;dist</tt> using the autotools in a pristine CVS tree. (Actually,
+we've started out by fudging that a bit, but we're going to fix that.)</p>
+
+<h2><a name="releases">Release History</a></h2>
+
+<p><b>miriad 4.1.1.20091018</b>
+(<a href="miriad-4.1.1.20091018.tar.gz">tarball</a>)<br />
+SHA1 sum: <tt>345422e25fef4f8343d7b7f2b42d5e2c33b3bd88</tt><br />
+git mirror commit id: <tt>d8cc89134327965f65fc6deb3860085c617a0503</tt><br />
+</p>
+
+<p><b>Changes from previous version:</b> most importantly, a bugfix for
+intermittent <tt>sfind</tt> crashes.</p>
+
+<p><b>miriad 4.1.1.20090925</b>
+(<a href="miriad 4.1.1.20090925.tar.gz">tarball</a>)<br />
+SHA1 sum: <tt>2408ffbe11398baf22c566727f84ab58135054f0</tt><br />
+git mirror commit id: <tt>fa88a3e98b12b0b5f6e2b41cbf97fbcf2a361a02</tt><br />
+</p>
+
+<p><b>Changes from previous version:</b> This is the first MacPorts
+version.</p>
+
+
+
+<h2><a name="contact">Contact</a></h2>
+
+<p>For more information or troubleshooting help, contact the port maintainer,
+Peter Williams, at <tt>pwilliams@astro.berkeley.edu</tt>.</p>
+
+<div id="footer">
+<p>Copyright 2009 Peter Williams. <a rel="license"
+href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img
+alt="Creative Commons License" style="border-width:0"
+src="http://i.creativecommons.org/l/by-sa/3.0/us/80x15.png" /></a><br
+/>This work is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative
+Commons Attribution-Share Alike 3.0 United States License</a>.</p>
+</div>
+
+</body>
+</html>
