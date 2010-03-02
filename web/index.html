@@ -43,26 +43,31 @@ miriad 4.1.1.20100222 (<a href="#releases">info</a>)</p>
 <p>Installation is about as easy as we can make it, but still
 nontrivial. The steps are:</p>
 <ol>
-<li>Make sure you will be able to leave your computer running for a few
+<li>Make sure you will be able to leave your computer running for several
 hours. The initial install does not need attention but will take a while
 to compile everything. (Updates are faster.)</li>
 <li>Install MacPorts using <a
 href="http://www.macports.org/install.php">these
-instructions</a>.</li>
+instructions</a>. If you need help with this step, there's a lot of
+information available online; see <a
+href="http://www.macports.org/install.php#help">the MacPorts help
+links</a> at the bottom of their installation page.</li>
 <li>Open a terminal. Which telescope will you be reducing data from?
 <ul>
 <li>The <a href="http://ral.berkeley.edu/ata/">Allen Telescope
-Array</a>: run <tt>sudo port -k install miriad</tt>.</li>
-<li><a href="http://www.mmarray.org/">CARMA</a>: run <tt>sudo port -k
+Array</a>: run <tt>sudo port -vk install miriad</tt>.</li>
+<li><a href="http://www.mmarray.org/">CARMA</a>: run <tt>sudo port -kv
 install miriad +carma</tt>.</li>
 <li>Anything else: <a href="#contact">contact the port maintainer</a>
 and ask for a variant to be created for your telescope.</li>
 </ul>
 </li>
-<li>Your computer will spend a long time whirring away and should eventually
-finish working without giving any error messages. If you see an error message,
-<a href="#contact">contact the port maintainer</a> with the exact text of
-the error.</li>
+<li>Your computer will spend a long time whirring away and should
+eventually finish working with a message about &ldquo;Activating
+miriad&rdquo;, some notes on setting up your shell, and no obvious
+error messages. If something seems to have failed, <a
+href="#contact">contact the port maintainer</a> with the exact text of
+the output that's worrying you.</li>
 </ol>
 
 <p>For general help, see <a
@@ -78,7 +83,7 @@ installation with the following steps:</p>
 <ol>
 <li>Open a terminal.</li>
 <li>Run <tt>sudo port sync</tt>.</li>
-<li>Run <tt>sudo port -k upgrade miriad</tt>. If nothing happens, you already
+<li>Run <tt>sudo port -vk upgrade miriad</tt>. If nothing happens, you already
 have the most recent version of MIRIAD that's been pushed to the MacPorts
 tree.</li>
 </ol>
@@ -98,8 +103,11 @@ to run.</p>
 every month. Updates will be released more rapidly for key bugfixes to the
 tasks or build system &mdash; <a href="#contact">contact the port maintainer</a>
 to request an update. The tarballs that are pushed are produced by a
-<tt>make&nbsp;dist</tt> using the autotools in a pristine CVS tree. (Actually,
-we've started out by fudging that a bit, but we're going to fix that.)</p>
+<tt>make&nbsp;dist</tt> using the autotools in a pristine checkout of
+the MIRIAD source code. The &ldquo;latest version&rdquo; mentioned at
+the top of this webpage may be either ahead of or behind what's
+available from MacPorts, depending on the timing of updates to their
+site and this one.</p>
 
 <h2><a name="releases">Release History</a></h2>
 
@@ -136,8 +144,6 @@ git mirror commit id: <tt>fa88a3e98b12b0b5f6e2b41cbf97fbcf2a361a02</tt><br />
 
 <p><b>Changes from previous version:</b> This is the first MacPorts
 version.</p>
-
-
 
 <h2><a name="contact">Contact</a></h2>
 
