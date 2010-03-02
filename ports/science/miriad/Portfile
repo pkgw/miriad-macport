@@ -9,7 +9,7 @@ PortSystem       1.0
 
 name             miriad
 set relver       4.1.1
-set tardate      20100222
+set tardate      20100302
 version          ${relver}.${tardate}
 platforms        darwin
 categories       science
@@ -30,7 +30,7 @@ license          unknown
 # Files
 
 master_sites http://astro.berkeley.edu/~pkwill/miriad-macport/
-checksums    sha1 ae269af96afcdb10b95faaeeefc8d58d7bbbd840
+checksums    sha1 5adcad3cb4072bcdbd4dae7770574ef6429aeea4
 
 # We need Fortran support, which the Apple version of GCC doesn't offer.
 # So we force the use of a specified MacPorts-built GCC.
