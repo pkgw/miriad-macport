@@ -76,7 +76,7 @@ configure.compiler ${compilerident}
 pre-configure {
     ui_msg "Configuring MIRIAD with telescope parameter of \"${thescope}\"."
     ui_msg "Consult the port variants to use a different setting. The default"
-    ui_msg "is \"${defaultscope}\". If there's no variant for you desired"
+    ui_msg "is \"${defaultscope}\". If there's no variant for your desired"
     ui_msg "telescope, contact the port maintainer and one will be quickly added."
 }
 
