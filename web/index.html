@@ -92,7 +92,12 @@ online; see <a href="http://www.macports.org/install.php#help">the
 MacPorts help links</a> at the bottom of their installation page or <a
 href="http://trac.macports.org/#MacPortsSupport">the generic MacPorts
 support page</a>.</li>
-<li>Open a terminal. Which telescope will you be reducing data from?
+<li>Open a terminal and run
+<blockquote>
+  <tt>sudo port sync</tt>
+</blockquote>
+to fetch the most up-to-date data from the MacPorts server.</li>
+<li>Which telescope will you be reducing data from?
 <ul>
 <li>If you're using the <a href="http://ral.berkeley.edu/ata/">Allen Telescope
 Array</a>, run
@@ -107,10 +112,13 @@ Array</a>, run
 and ask for a &ldquo;variant&rdquo; to be created for your telescope.</li>
 </ul>
 </li>
-<li>Your computer will spend a long time working and should eventually
-finish with a message about &ldquo;Activating miriad&rdquo;, some
-notes on setting up your shell, and no obvious error messages. If
-something seems to have failed, <a href="#contact">contact the port
+<li>Your computer will begin to work for a long time. You might take this
+opportunity to read <a href="http://guide.macports.org/">the MacPorts Guide</a>
+for some overall documentation of the MacPorts system, how it works, and how
+to keep it running smoothly on your machine.</li>
+<li>Eventually, your computer should finish with a message about &ldquo;Activating
+miriad&rdquo;, some notes on setting up your shell, and no obvious error messages.
+If something seems to have failed, <a href="#contact">contact the port
 maintainer</a> with the <em>exact</em> text of the output that's worrying
 you.</li>
 </ol>
