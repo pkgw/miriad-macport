@@ -1,0 +1,32 @@
+Instructions for pushing out a new MIRIAD MacPort release.
+
+- Create tarball from an unmodified checkout of the CVSHEAD branch of
+  the git mirror
+
+- Update portfile with version, SHA1 and a temporary datecode in
+  the next-update branch. Commit.
+
+- Test out on ariel and/or miranda. Iterate with temporary datecodes
+  until works.
+
+- Update portfile with final version, datecode, SHA1.
+
+- Update versions.txt
+
+- Update "last updated" text in web/index.html
+
+- Update Release History with new version and changelog based on git diff.
+
+- ./pushweb.sh, proofread.
+
+- Generate diff from Portfile based on *link found at bottom of*
+  http://trac.macports.org/browser/trunk/dports/science/miriad/Portfile
+
+- File ticket for port update at https://trac.macports.org/newticket ; see
+  previous tickets at
+
+  http://trac.macports.org/query?status=assigned&status=closed&status=new&status=reopened&port=miriad&col=id&col=summary&col=port&col=status&col=owner&col=type&col=priority&summary=~&order=priority
+
+- Commit changes to miriad-macport to master branch.
+
+- Wait.
