@@ -2,12 +2,14 @@
 # $Id$
 
 PortSystem       1.0
+PortGroup        xcodeversion 1.0
 
 # Miriad releases are very infrequent, so our ports will be based on
 # distributions made from CVS snapshots.  We add a sub-version number
 # based on the snapshot date to distinguish things.
 
 name             miriad
+conflicts        pgplot
 set relver       4.1.3
 set tardate      20100512
 version          ${relver}.${tardate}
@@ -38,27 +40,26 @@ checksums    sha1 0d92e6e5dfdb8c65ab04e1f898b9c38c3f6c9290
 set compilerport  gcc43
 set compilerident macports-gcc-4.3
 
+universal_variant    no
+
 depends_build-append port:${compilerport}
-depends_lib-append   lib:libpng:libpng \
-                     lib:libreadline:readline \
-                     lib:libIC:xorg-libice \
-                     lib:libSM:xorg-libsm \
-                     lib:libX11:xorg-libX11 \
-                     lib:libXau:xorg-libXau \
-                     lib:libXaw:xorg-libXaw \
-                     lib:libXdmcp:xorg-libXdmcp \
-                     lib:libz:zlib
+depends_lib-append   port:libpng \
+                     port:readline \
+                     port:xorg-libice \
+                     port:xorg-libsm \
+                     port:xorg-libX11 \
+                     port:xorg-libXau \
+                     port:xorg-libXaw \
+                     port:xorg-libXdmcp \
+                     port:zlib
 
 # The XCode 3.0 linker has a bug that prevents successful execution of
-# Miriad tasks. Older versions work, but hopefully not many people have
-# them installed anymore so we can just use the portgroup.
+# Miriad tasks.
 
-PortGroup             xcodeversion 1.0
-
-minimum_xcodeversions {7 3.1}
+minimum_xcodeversions {9 3.1}
 
 # We've hacked in the tarball date into the version number, so
-# we to tell the build system what directory to the files in the
+# we tell the build system what directory the files in the
 # tarball actually live in.
 
 worksrcdir      ${name}-${relver}
@@ -79,7 +80,7 @@ configure.args  --prefix=${prefix} \
 configure.compiler ${compilerident}
 
 # The telescope configuration is important, so make sure the user is
-# notified of which setup is being used
+# told which setup is being used.
 
 pre-configure {
     ui_msg "Configuring MIRIAD with telescope parameter of \"${thescope}\"."
