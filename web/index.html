@@ -268,6 +268,56 @@ version.</li>
 <p>For more information or troubleshooting help, contact the port maintainer,
 Peter Williams, at <tt>pwilliams@astro.berkeley.edu</tt>.</p>
 
+<h2><a name="customcompilers">Advanced Topic: Custom Compilers</a></h2>
+
+<p>It is possible to use a compiler other than the MacPorts-provided
+version of GCC to compile MIRIAD. <em>This setup is neither
+recommended nor supported because of the subtle bugs that very often
+result from nonstandard compiler configurations.</em> If you are not
+able to install MIRIAD on a Mac successfully without the use of the
+MacPort, you should probably not attempt to use a nonstandard compiler
+configuration. However, the use of a custom compiler can provide
+certain advantages:</p>
+<ul>
+<li>Faster code if the compiler has a better optimizer than GCC.</li>
+<li>A quicker first-time build of MIRIAD because the MacPort version
+of GCC doesn't need to be built. Note that this is a one-time-only
+gain since once the GCC is built it can be reused with
+recompilation.</li>
+</ul>
+<p>You can choose which compiler will be used to build MIRIAD by
+installing the <tt>gcc_select</tt> MacPort, specifying a compiler with
+the <tt>gcc_select</tt> command, and building the MIRIAD MacPort while
+specifying the <tt>+gcc_select</tt> variant.</p>
+<p>To build MIRIAD with a custom compiler, then, you need to define
+your compiler's setup in the <tt>gcc_select</tt> system and then select
+it. This is done by creating a file in <tt>/opt/local/etc/select/gcc</tt>
+named something like <tt>custom</tt> of the form:</p>
+<blockquote>
+<pre>/path/to/cc
+/path/to/cpp
+/path/to/c++
+/path/to/c++
+-
+-
+/path/to/fc</pre>
+</blockquote>
+<p>Each line in the file specifies the path to a standard compiler
+executable. Most notably, the last line specifies the Fortran compiler
+to use. (The two lines with dashes point to the Java compiler and the
+code coverage tool, typically gcj and gcov. These are not used when
+compiling MIRIAD.) <em>If you mix and match executables from different
+compiler versions, your build will almost assuredly fail.</em> Then,
+&ldquo;select&rdquo; your new compiler by running a command such as
+</p>
+<blockquote>
+  <tt>gcc_select custom</tt>
+</blockquote>
+<p>This support should be sufficient for you to attempt building the
+MIRIAD MacPort with any compiler you want, but be prepared for a lot
+of frustration and wasted time unless you know exactly what you're
+doing.</p>
+
 <div id="footer">
 <p>Copyright 2009, 2010, 2011 Peter Williams. <a rel="license"
 href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img
