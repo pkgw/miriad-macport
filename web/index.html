@@ -119,12 +119,12 @@ the “variant string” you determined above, and putting the whole
 command on one line:
 <blockquote>
   <tt>sudo port -u install `port info --depends miriad VARIANTS
-      |perl -ne 'print "$1 " while /port:([^,])+)/g'`</tt>
+      |perl -ne 'print "$1 " while /port:([^,]+)/g'`</tt>
 </blockquote>
 For example, for an ATA user,
 <blockquote>
   <tt>sudo port -u install `port info --depends miriad +ata
-      |perl -ne 'print "$1 " while /port:([^,])+)/g'`</tt>
+      |perl -ne 'print "$1 " while /port:([^,]+)/g'`</tt>
 </blockquote>
 Your computer will begin to work for a long time. (If the command
 fails instantly, triple–check that you entered it in correctly.) You
