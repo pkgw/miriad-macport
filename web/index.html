@@ -268,9 +268,18 @@ version.</li>
 <p>For more information or troubleshooting help, contact the port maintainer,
 Peter Williams, at <tt>pwilliams@astro.berkeley.edu</tt>.</p>
 
-<h2><a name="customcompilers">Advanced Topic: Custom Compilers</a></h2>
+<h2><a name="compilers">Advanced Topic: Choosing Compilers</a></h2>
 
-<p>It is possible to use a compiler other than the MacPorts-provided
+<p>The MIRIAD MacPort allows you flexibility in choosing the compiler
+used to compile MIRIAD. <em>Unless you know of a specific reason to
+avoid the default compiler, you should use it.</em> If you want to
+use a specific version of the MacPorts–distributed copies of <a
+href="http://gcc.gnu.org/">gcc</a>, there are <tt>+gccXY</tt> variants
+in the MacPort that will build MIRIAD using GCC version
+<tt>X.Y</tt>. Use the command <tt>port info miriad</tt> to get a listing
+of which of these variants are supported.</p>
+
+<p>It is also possible to use a compiler other than the MacPorts-provided
 version of GCC to compile MIRIAD. <em>This setup is neither
 recommended nor supported because of the subtle bugs that very often
 result from nonstandard compiler configurations.</em> If you are not
