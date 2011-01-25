@@ -18,7 +18,7 @@ href="http://carma.astro.umd.edu/wiki/index.php/Miriad">MIRIAD</a>
 radio astronomy suite, which makes it easy to install and update
 MIRIAD on your Mac OS&nbsp;X computer.</p>
 
-<p><b>This is not the homepage of MIRIAD itself</b> and we're not
+<p><b>This is not the homepage of MIRIAD itself</b> and we’re not
 going to discuss what MIRIAD is or why you might want to install
 it. If you have questions along those lines, see:</p>
 <ol>
@@ -28,16 +28,16 @@ it. If you have questions along those lines, see:</p>
 (which tracks MIRIAD bugs amongst others)</li>
 <li><a href="http://www.atnf.csiro.au/computing/software/miriad/">the
 homepage for the ATNF version of MIRIAD</a> (which differs somewhat
-from the software we're discussing)</li>
+from the software we’re discussing)</li>
 </ol>
 
-<p>If you're like most people, you'll probably dive right in to the <a
+<p>If you’re like most people, you’ll probably dive right in to the <a
 href="#installing">installation instructions</a>, but you might find
 it helpful to read the <a href="#background">background information</a> as well.</p>
 
 <div id="latest">The version of MIRIAD distributed through MacPorts was
 last updated on <b>2010 July 6</b>. See <a
-href="#releases">below</a> for information on what&apos;s changed since
+href="#releases">below</a> for information on what’s changed since
 the last snapshot.</div>
 
 <h2><a name="background">Background: MacPorts?</a></h2>
@@ -63,18 +63,18 @@ track recent MIRIAD development.</p>
 <p>The key advantage to using MacPorts to compile something like
 MIRIAD is that it provides a relatively controlled environment for
 building the software. Most build problems are due to little
-differences between the software installed on one person's computer
-and another's, so eliminating those differences goes a long way to
+differences between the software installed on one person’s computer
+and another’s, so eliminating those differences goes a long way to
 eliminating build problems.</p>
 
 <p>A secondary goal of the MacPorts distribution of MIRIAD is to provide
-frequently-updated, versioned packages of the MIRIAD source code. It's
-easier to track down bugs and reproduce results when the code you're
+frequently-updated, versioned packages of the MIRIAD source code. It’s
+easier to track down bugs and reproduce results when the code you’re
 using comes in discrete, uniquely-named releases. The MacPorts
 packages of MIRIAD have unique version numbers (via the inclusion of
-their release date in the version number) so that it's easy to specify
-exactly which code you're using. The source code bundles distributed
-on this page will compile on all systems, so you don't have to be an
+their release date in the version number) so that it’s easy to specify
+exactly which code you’re using. The source code bundles distributed
+on this page will compile on all systems, so you don’t have to be an
 OS&nbsp;X user to take advantage of this.</p>
 
 <h2><a name="installing">Installing MIRIAD with MacPorts</a></h2>
@@ -89,7 +89,7 @@ will take a while to compile everything. (Updates are faster.)</li>
 
 <li>Install the MacPorts system on your computer using <a
 href="http://www.macports.org/install.php">these instructions</a>. If
-you need help with this step, there's a lot of information available
+you need help with this step, there’s a lot of information available
 online; see <a href="http://www.macports.org/install.php#help">the
 MacPorts help links</a> at the bottom of their installation page or <a
 href="http://trac.macports.org/#MacPortsSupport">the generic MacPorts
@@ -103,9 +103,9 @@ to fetch the most up-to-date data from the MacPorts server.</li>
 
 <li>Which telescope will you be reducing data from?
 <ul>
-<li>If you're using <a href="http://www.mmarray.org/">CARMA</a>, note
+<li>If you’re using <a href="http://www.mmarray.org/">CARMA</a>, note
 down that your “variant string” is <tt>+carma</tt>.</li>
-<li>If you're using the <a href="http://ral.berkeley.edu/ata/">Allen Telescope
+<li>If you’re using the <a href="http://ral.berkeley.edu/ata/">Allen Telescope
 Array</a>, note down that your “variant string” is <tt>+ata</tt>.</li>
 <li>For anything else: <a href="#contact">contact the port maintainer</a>
 and ask for a “variant” to be created for your telescope. In
@@ -136,7 +136,7 @@ keep it running smoothly on your machine.
 
 <li>Eventually, your computer should finish without printing any
 obvious error messages.  If something seems to have failed, the
-problem is outside of the MIRIAD MacPort and we can't offer you any
+problem is outside of the MIRIAD MacPort and we can’t offer you any
 specific advice. Consult your local system administrator or ask <a
 href="#contact">the port maintainer</a> nicely.</li>
 
@@ -152,7 +152,7 @@ MacPorts Guide</a> while this is happening. Your computer should
 finish with a message about “Activating miriad”, some notes on setting
 up your shell, and no obvious error messages.  If something seems to
 have failed, <a href="#contact">contact the port maintainer</a> with
-the <em>exact</em> text of the output that's worrying you.</li>
+the <em>exact</em> text of the output that’s worrying you.</li>
 </ol>
 
 <p>For general help with the MacPorts system, see <a
@@ -174,7 +174,7 @@ installation with the following steps:</p>
 <blockquote>
   <tt>sudo port -vunk upgrade miriad</tt>
 </blockquote>If nothing happens, you already have the most recent
-version of MIRIAD that's been uploaded to MacPorts.</li>
+version of MIRIAD that’s been uploaded to MacPorts.</li>
 </ol>
 
 <p>If you get an error, you might try opening a terminal and running:</p>
@@ -185,7 +185,7 @@ version of MIRIAD that's been uploaded to MacPorts.</li>
 </ol>
 
 <p>It is also good to run these commands once in a while even if you
-don't get any errors with MIRIAD. They may, however, take a long time
+don’t get any errors with MIRIAD. They may, however, take a long time
 to run. More information on keeping your MacPorts installation running
 smoothly are beyond the scope of these instructions. Once again,
 consult <a href="http://trac.macports.org/#MacPortsSupport">the
@@ -193,7 +193,7 @@ MacPorts support page</a>.</p>
 
 <p>The MacPort version of MIRIAD is updated approximately every few
 months. Updates will be released more rapidly for key bugfixes to the
-tasks or build system &mdash; <a href="#contact">contact the port
+tasks or build system — <a href="#contact">contact the port
 maintainer</a> to request an update. The source code bundles are
 produced by a <tt>make&nbsp;dist</tt> using the autotools in a
 pristine checkout of the MIRIAD source code. The “last updated
@@ -205,8 +205,8 @@ depending on the timing of updates to their site and this one.</p>
 
 <p>Releases of MIRIAD itself are infrequent, so we name our releases
 with the date they were produced as well as the MIRIAD version
-number. Note that <b>you don&apos;t need to download the source code
-here</b> to install MIRIAD with MacPorts &mdash; the MacPorts system
+number. Note that <b>you don’t need to download the source code
+here</b> to install MIRIAD with MacPorts — the MacPorts system
 takes care of that step for you.</p>
 
 <!-- Template:
@@ -322,7 +322,7 @@ certain advantages:</p>
 <ul>
 <li>Faster code if the compiler has a better optimizer than GCC.</li>
 <li>A quicker first-time build of MIRIAD because the MacPort version
-of GCC doesn't need to be built. Note that this is a one-time-only
+of GCC doesn’t need to be built. Note that this is a one-time-only
 gain since once the GCC is built it can be reused with
 recompilation.</li>
 </ul>
@@ -331,7 +331,7 @@ installing the <tt>gcc_select</tt> MacPort, specifying a compiler with
 the <tt>gcc_select</tt> command, and building the MIRIAD MacPort while
 specifying the <tt>+gcc_select</tt> variant.</p>
 <p>To build MIRIAD with a custom compiler, then, you need to define
-your compiler's setup in the <tt>gcc_select</tt> system and then select
+your compiler’s setup in the <tt>gcc_select</tt> system and then select
 it. This is done by creating a file in <tt>/opt/local/etc/select/gcc</tt>
 named something like <tt>custom</tt> of the form:</p>
 <blockquote>
@@ -356,7 +356,7 @@ compiler versions, your build will almost assuredly fail.</em> Then,
 </blockquote>
 <p>This support should be sufficient for you to attempt building the
 MIRIAD MacPort with any compiler you want, but be prepared for a lot
-of frustration and wasted time unless you know exactly what you're
+of frustration and wasted time unless you know exactly what you’re
 doing.</p>
 
 <div id="footer">
