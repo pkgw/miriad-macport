@@ -81,10 +81,12 @@ OS&nbsp;X user to take advantage of this.</p>
 
 <p>Installation can take a long time but is as straightforward as we
 can make it. The steps are:</p>
+
 <ol>
-<li>Make sure you will be able to leave your computer running for several
-hours. The initial install does not need attention but will take a while
-to compile everything. (Updates are faster.)</li>
+<li>Make sure you will be able to leave your computer running for
+several hours. The initial install does not need much attention but
+will take a while to compile everything. (Updates are faster.)</li>
+
 <li>Install the MacPorts system on your computer using <a
 href="http://www.macports.org/install.php">these instructions</a>. If
 you need help with this step, there's a lot of information available
@@ -92,35 +94,65 @@ online; see <a href="http://www.macports.org/install.php#help">the
 MacPorts help links</a> at the bottom of their installation page or <a
 href="http://trac.macports.org/#MacPortsSupport">the generic MacPorts
 support page</a>.</li>
+
 <li>Open a terminal and run
 <blockquote>
   <tt>sudo port sync</tt>
 </blockquote>
 to fetch the most up-to-date data from the MacPorts server.</li>
+
 <li>Which telescope will you be reducing data from?
 <ul>
+<li>If you're using <a href="http://www.mmarray.org/">CARMA</a>, note
+down that your “variant string” is <tt>+carma</tt>.</li>
 <li>If you're using the <a href="http://ral.berkeley.edu/ata/">Allen Telescope
-Array</a>, run
-<blockquote>
-  <tt>sudo port -vk install miriad</tt>
-</blockquote></li>
-<li>If you're using <a href="http://www.mmarray.org/">CARMA</a>, run
-<blockquote>
-  <tt>sudo port -vk install miriad +carma</tt>
-</blockquote></li>
+Array</a>, note down that your “variant string” is <tt>+ata</tt>.</li>
 <li>For anything else: <a href="#contact">contact the port maintainer</a>
-and ask for a &ldquo;variant&rdquo; to be created for your telescope.</li>
-</ul>
+and ask for a “variant” to be created for your telescope. In
+the meantime, you can probably use an <em>empty</em> “variant string”
+and get started OK.</li>
+</ul></li>
+
+<li>Install the software on which MIRIAD depends. Execute the
+following magic command in your terminal, replacing “VARIANTS” with
+the “variant string” you determined above, and putting the whole
+command on one line:
+<blockquote>
+  <tt>sudo port -u install `port info --depends miriad VARIANTS
+      |perl -ne 'print "$1 " while /port:([^,])+)/g'`</tt>
+</blockquote>
+For example, for an ATA user,
+<blockquote>
+  <tt>sudo port -u install `port info --depends miriad +ata
+      |perl -ne 'print "$1 " while /port:([^,])+)/g'`</tt>
+</blockquote>
+Your computer will begin to work for a long time. (If the command
+fails instantly, triple–check that you entered it in correctly.) You
+might take this opportunity to read <a
+href="http://guide.macports.org/">the MacPorts Guide</a> for some
+overall documentation of the MacPorts system, how it works, and how to
+keep it running smoothly on your machine.
 </li>
-<li>Your computer will begin to work for a long time. You might take this
-opportunity to read <a href="http://guide.macports.org/">the MacPorts Guide</a>
-for some overall documentation of the MacPorts system, how it works, and how
-to keep it running smoothly on your machine.</li>
-<li>Eventually, your computer should finish with a message about &ldquo;Activating
-miriad&rdquo;, some notes on setting up your shell, and no obvious error messages.
-If something seems to have failed, <a href="#contact">contact the port
-maintainer</a> with the <em>exact</em> text of the output that's worrying
-you.</li>
+
+<li>Eventually, your computer should finish without printing any
+obvious error messages.  If something seems to have failed, the
+problem is outside of the MIRIAD MacPort and we can't offer you any
+specific advice. Consult your local system administrator or ask <a
+href="#contact">the port maintainer</a> nicely.</li>
+
+<li>Install MIRIAD itself. In your terminal, run
+<blockquote>
+  <tt>sudo port -vku install miriad VARIANTS</tt>
+</blockquote>
+replacing “VARIANTS” as before.</li>
+
+<li>It will take something like half an hour to compile MIRIAD. Once
+again, consider reading <a href="http://guide.macports.org/">the
+MacPorts Guide</a> while this is happening. Your computer should
+finish with a message about “Activating miriad”, some notes on setting
+up your shell, and no obvious error messages.  If something seems to
+have failed, <a href="#contact">contact the port maintainer</a> with
+the <em>exact</em> text of the output that's worrying you.</li>
 </ol>
 
 <p>For general help with the MacPorts system, see <a
