@@ -10,6 +10,7 @@ Instructions for pushing out a new MIRIAD MacPort release.
   until works.
 
 - Update portfile with final version, datecode, SHA1.
+  ('openssl rmd160 {filename}' to generate that hash.)
 
 - Update versions.txt
 
@@ -23,9 +24,7 @@ Instructions for pushing out a new MIRIAD MacPort release.
   http://trac.macports.org/browser/trunk/dports/science/miriad/Portfile
 
 - File ticket for port update at https://trac.macports.org/newticket ; see
-  previous tickets at
-
-  http://trac.macports.org/query?status=assigned&status=closed&status=new&status=reopened&port=miriad&col=id&col=summary&col=port&col=status&col=owner&col=type&col=priority&summary=~&order=priority
+  previous tickets at http://tinyurl.com/42voccl
 
 - Commit changes to miriad-macport to master branch.
 
