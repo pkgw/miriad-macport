@@ -52,14 +52,14 @@ if {[variant_isset carma]} {
 # to build with better-optimizing proprietary compilers, which we allow
 # via the gcc_select mechanism.
 
-variant gcc45 conflicts gcc44 gcc_select description {Build with gcc 4.5} {
-    configure.compiler  macports-gcc-4.5
-    depends_lib-append  port:gcc45
-}
-
 variant gcc44 conflicts gcc45 gcc_select description {Build with gcc 4.4} {
     configure.compiler  macports-gcc-4.4
     depends_lib-append  port:gcc44
+}
+
+variant gcc45 conflicts gcc44 gcc_select description {Build with gcc 4.5} {
+    configure.compiler  macports-gcc-4.5
+    depends_lib-append  port:gcc45
 }
 
 variant gcc_select conflicts gcc45 gcc44 description {Build with compilers chosen via gcc_select -- experts only} {
@@ -76,7 +76,7 @@ variant gcc_select conflicts gcc45 gcc44 description {Build with compilers chose
     depends_lib-append  port:gcc_select
 }
 
-if {![variant_isset gcc45] && ![variant_isset gcc44] && ![variant_isset gcc_select]} {
+if {![variant_isset gcc44] && ![variant_isset gcc45] && ![variant_isset gcc_select]} {
     default_variants +gcc45
 }
 
