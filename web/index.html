@@ -36,7 +36,7 @@ href="#installing">installation instructions</a>, but you might find
 it helpful to read the <a href="#background">background information</a> as well.</p>
 
 <div id="latest">The version of MIRIAD distributed through MacPorts was
-last updated on <b>2010 July 6</b>. See <a
+last updated on <b>2011 April 26</b>. See <a
 href="#releases">below</a> for information on what’s changed since
 the last snapshot.</div>
 
@@ -218,6 +218,35 @@ takes care of that step for you.</p>
 <li>git mirror commit id: <tt></tt></li>
 </ul>
 -->
+
+<p><b>miriad 4.1.7.20110426</b>
+(<a href="miriad-4.1.7.20110426.tar.gz">source code</a>)</p>
+<ul>
+<li><b>Changes from previous version:</b> incorporate <tt>wcslib</tt>
+source code to prepare for using it to replace in-house coordinate
+routines. Allow <tt>gpscal</tt>, <tt>mselfcal</tt>, <tt>selfcal</tt>,
+<tt>uvmodel</tt>, <tt>wsrtuvmodel</tt> to work on much larger
+datasets. Correctness and documentation fixes in <tt>sfind</tt>. New
+tasks: <tt>imstack</tt>, <tt>varmaps</tt>. Support FITS files larger
+than 2 GB. Update <tt>CARMA</tt> tables. Updates to ATNF user cookbook (!).
+Minor updates to <tt>atlod</tt>, <tt>avmaths</tt>, <tt>bootflux</tt>,
+<tt>corset</tt>, <tt>cotra</tt>, <tt>csflag</tt>, <tt>gpcopy</tt>,
+<tt>gplist</tt>, <tt>imcmp</tt>, <tt>listobs</tt>, <tt>maxdim</tt>,
+<tt>moment</tt>, <tt>odnh3</tt>, <tt>pgflag</tt>, <tt>smauvspec</tt>,
+<tt>smavarplt</tt>, <tt>uvcal2</tt>, <tt>uvputhd</tt>,
+<tt>uvsort</tt>, <tt>uvspec</tt>, <tt>uvwide</tt>,
+<tt>velmodel</tt>. Code churn in <tt>pcsub</tt>, <tt>regrid</tt>,
+<tt>sinbad</tt>. Buffer size increases in miscellaneous tasks.
+</li>
+<li><b>Build system updates</b> (not relevant to MacPort users):
+firmly require <tt>autoconf</tt> 2.62 and <tt>automake</tt>
+1.11. Support <tt>--enable-silent-rules</tt> option to
+<tt>configure</tt>. Miscellaneous robustness improvements.
+</li>
+<li>SHA1 sum: <tt>5a0bbea5a1ace1ca141e26261fd9e1e56379c300</tt></li>
+<li>git mirror commit id:
+<tt>f49ba85716e1e812212ae2d0ad955908cbd0c762</tt></li>
+</ul>
 
 <p><b>miriad 4.1.3.20100706</b>
 (<a href="miriad-4.1.3.20100706.tar.gz">source code</a>)</p>
