@@ -9,3 +9,4 @@ set -e -x
 
 cd web
 cp -p $files $dest
+cp -p /cosmic1/pkwill/miriad/$BADOS/share/doc/miriad/* $dest
