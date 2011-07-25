@@ -34,7 +34,7 @@ href="#installing">installation instructions</a>, but you might find
 it helpful to read the <a href="#background">background information</a> as well.</p>
 
 <div id="latest">The version of MIRIAD distributed through MacPorts was
-last updated on <b>2011 April 26</b>. See <a
+last updated on <b>2011 June 22</b>. See <a
 href="#releases">below</a> for information on what’s changed since
 the last snapshot or <a href="#manuals">the manuals</a>.</div>
 
@@ -224,14 +224,38 @@ here</b> to install MIRIAD with MacPorts — the MacPorts system
 takes care of that step for you.</p>
 
 <!-- Template:
-<p><b>miriad 4.1.</b>
-(<a href="miriad-4.1..tar.gz">source code</a>)</p>
+<p><b>miriad 4.2.</b>
+(<a href="miriad-4.2..tar.gz">source code</a>)</p>
 <ul>
 <li><b>Changes from previous version:</b> </li>
 <li>SHA1 sum: <tt></tt></li>
 <li>git mirror commit id: <tt></tt></li>
 </ul>
 -->
+
+<p><b>miriad 4.2.2.20110722</b>
+(<a href="miriad-4.2.2.20110722.tar.gz">source code</a>)</p>
+<ul>
+<li><b>Changes from previous version:</b> start using <tt>wcslib</tt>
+internally for coordinate manipulations. Start providing most ATNF
+MIRIAD tasks (except ones interacting with RPFITS files), including
+ATNF version of <tt>mfcal</tt> and <tt>uvplt</tt> as <tt>at_mfcal</tt>
+and <tt>at_uvplt</tt>. Add: <tt>blflag</tt>, <tt>rmclean</tt>,
+<tt>varmaps</tt>, <tt>varmerge</tt>. Update manuals. Synchronize with
+ATNF MIRIAD, possibly losing CARMA modifications: <tt>cgdisp</tt>,
+<tt>clean</tt>, <tt>csflag</tt>, <tt>fits</tt>, <tt>imbin</tt>,
+<tt>imfit</tt>, <tt>imom</tt>, <tt>imwcs</tt>, <tt>invert</tt>,
+<tt>linmos</tt>, <tt>mossdi</tt>, <tt>offpol</tt>, <tt>regrid</tt>,
+<tt>vblank</tt>, <tt>velcolor</tt>, <tt>zapchan</tt>, and subrouting
+libraries. Bugfix in <tt>sfind</tt>. New options to:
+<tt>immedian</tt>, <tt>uvflux</tt>, <tt>uvsplit</tt>. Support
+<tt>-e</tt> flag in tasks. Add per-antenna filtering when selecting on
+elevation, <tt>dazim</tt>, and <tt>delev</tt>.  Handle CARMA
+<tt>delaylx</tt> and <tt>delayry</tt> variables in
+<tt>uvdecor</tt>. Increase buffer sizes in <tt>uvflag</tt>.</li>
+<li>SHA1 sum: <tt>1a7c4d50fa746e2112be46febab377fa2b1a7fb7</tt></li>
+<li>git mirror commit id: <tt>0c5a43f17f6043aa6380673575722e587baac3de</tt></li>
+</ul>
 
 <p><b>miriad 4.1.7.20110426</b>
 (<a href="miriad-4.1.7.20110426.tar.gz">source code</a>)</p>
