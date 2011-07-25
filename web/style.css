@@ -1,5 +1,10 @@
 body {
-	margin: 0 15% 0 15%;
+	margin: 0 5% 0 5%;
+}
+
+#container {
+	margin: 0 auto 0 auto;
+	max-width: 70ex;
 }
 
 p {
