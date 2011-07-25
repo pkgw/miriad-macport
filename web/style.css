@@ -7,9 +7,9 @@ p {
 	text-indent: 0;
 }
 
-#latest {
+p.latest {
 	text-align: left;
-	margin: 0 10% 0 10%;
+	margin: 0 10% 8px 10%;
 	padding: 8px 8px 8px 8px;
 	background: #DDDDFF;
 }
