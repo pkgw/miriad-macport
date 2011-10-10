@@ -10,8 +10,8 @@ PortGroup        xcodeversion 1.0
 
 name             miriad
 conflicts        pgplot
-set relver       4.2.2
-set tardate      20110722
+set relver       4.2.3
+set tardate      20111010
 version          ${relver}.${tardate}
 platforms        darwin
 categories       science
@@ -32,8 +32,8 @@ license          unknown
 # Files
 
 master_sites http://astro.berkeley.edu/~pkwill/miriad-macport/
-checksums    sha1    1a7c4d50fa746e2112be46febab377fa2b1a7fb7 \
-             rmd160  a8819c691829e99ab26420f81d2aac6e33286b35
+checksums    sha1    ee1f8639760e890b1b35a9c33d15b79d076e7c7f \
+             rmd160  9de12a01dfded42da817bf02d8ef8243ad81214e
 
 # Telescope/buffer size selection.
 
