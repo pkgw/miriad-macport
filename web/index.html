@@ -35,7 +35,7 @@ href="#installing">installation instructions</a>, but you might find
 it helpful to read the <a href="#background">background information</a> as well.</p>
 
 <p class="latest">The version of MIRIAD distributed through MacPorts
-was last updated on <b>2011 June 22</b>. See <a
+was last updated on <b>2011 October 10</b>. See <a
 href="#releases">below</a> for information on what’s changed since the
 last snapshot.</p>
 
@@ -112,6 +112,9 @@ Array</a>, note down that your “variant string” is <tt>+ata</tt>.</li>
 <a href="http://www.astron.nl/radio-observatory/public/public-0">Westerbork
 Synthesis Radio Telescope</a>, note down that your “variant string” is
 <tt>+wsrt</tt>.</li>
+<li>If you’re using the <a
+href="http://www.cfa.harvard.edu/sma/">Submillimeter Array</a>, note
+down that your “variant string” is <tt>+sma</tt>.</li>
 <li>For anything else: <a href="#contact">contact the port maintainer</a>
 and ask for a “variant” to be created for your telescope. In
 the meantime, you can probably use an <em>empty</em> “variant string”
@@ -236,6 +239,23 @@ takes care of that step for you.</p>
 <li>git mirror commit id: <tt></tt></li>
 </ul>
 -->
+
+<p><b>miriad 4.2.3.20111010</b>
+(<a href="miriad-4.2.3.20111010.tar.gz">source code</a>)</p>
+<ul>
+<li><b>Changes from previous version:</b> Rename KAT-7 telescope from
+KAT7 for compatibility with FITS files. Use per-antenna elevations in
+UV selection. Add <tt>options=replace</tt> to <tt>blcal</tt>. Add
+<tt>options=allants</tt> to <tt>listobs</tt>. Add
+<tt>options=on,off</tt> to <tt>sinbad</tt>.  Bugfix 333 GHz reference
+frequency for Mars in <tt>smaflux</tt>.  Increase buffer sizes in
+<tt>smagpplt</tt>. Visual tweaks in <tt>closure</tt>. Add
+<tt>xydelay</tt>, <tt>xyphase</tt> keywords to <tt>uvcal</tt>. Add
+<tt>soft</tt> keyword to <tt>varmaps</tt>. Various buffer size
+increases and documentation improvements.</li>
+<li>SHA1 sum: <tt>ee1f8639760e890b1b35a9c33d15b79d076e7c7f</tt></li>
+<li>git mirror commit id: <tt>79544ff182f52cc22d41c41e2e37b350eafa897d</tt></li>
+</ul>
 
 <p><b>miriad 4.2.2.20110722</b>
 (<a href="miriad-4.2.2.20110722.tar.gz">source code</a>)</p>
