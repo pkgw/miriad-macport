@@ -32,8 +32,8 @@ license          unknown
 # Files
 
 master_sites http://astro.berkeley.edu/~pkwill/miriad-macport/
-checksums    sha1    ee1f8639760e890b1b35a9c33d15b79d076e7c7f \
-             rmd160  9de12a01dfded42da817bf02d8ef8243ad81214e
+checksums    rmd160  9de12a01dfded42da817bf02d8ef8243ad81214e \
+             sha256  25d7c253ea54a74b2beaeff477ede4d9c8c862a32a73050635403e534f2112f6
 
 # Telescope/buffer size selection.
 
