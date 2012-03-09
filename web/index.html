@@ -35,7 +35,7 @@ href="#installing">installation instructions</a>, but you might find
 it helpful to read the <a href="#background">background information</a> as well.</p>
 
 <p class="latest">The version of MIRIAD distributed through MacPorts
-was last updated on <b>2011 October 10</b>. See <a
+was last updated on <b>2012 March 9</b>. See <a
 href="#releases">below</a> for information on what’s changed since the
 last snapshot.</p>
 
@@ -236,9 +236,25 @@ takes care of that step for you.</p>
 <ul>
 <li><b>Changes from previous version:</b> </li>
 <li>SHA1 sum: <tt></tt></li>
-<li>git mirror commit id: <tt></tt></li>
+<li>git mirror commit id: <tt><a href="https://github.com/pkgw/carma-miriad/commit/"></a></tt></li>
 </ul>
 -->
+
+<p><b>miriad 4.2.3.20120309</b>
+(<a href="miriad-4.2.3.20120309.tar.gz">source code</a>)</p>
+<ul>
+<li><b>Changes from previous version:</b> New online
+blanking task <tt>uvbflag</tt> (beta status). Additional useful output
+from <tt>sfind</tt>. New task <tt>mafia</tt> for finding image mask
+regions. Better FITS interoperation for optical-velocity spectral axes
+(important for CASA interop). Support for some moons in <tt>planets</tt>.
+Stabilize data format by removing configurability of <tt>MAXIANT</tt>.
+Work on reducing shared library links for more portable binaries.
+Continued work on 64-bit support in Fortran components.
+Continued work on use of wcslib for coordinate operations.</li>
+<li>SHA1 sum: <tt>ca68e34a53bf4dca823f80e557b908450d898134</tt></li>
+<li>git mirror commit id: <tt><a href="https://github.com/pkgw/carma-miriad/commit/64a91b8696ec30bae29f511463acee01e4bfd3f6">64a91b8696ec30bae29f511463acee01e4bfd3f6</a></tt></li>
+</ul>
 
 <p><b>miriad 4.2.3.20111010</b>
 (<a href="miriad-4.2.3.20111010.tar.gz">source code</a>)</p>
