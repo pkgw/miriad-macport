@@ -2,14 +2,17 @@
 #
 # Well, this is kind of ridiculously simple.... for now!
 
-dest=$HOME/public_html/miriad-macport/
+desthost=cfa0
+destdir=/data/wdocs/pwilliam/www-docs/miriad-macport/
+maninst=/opt/miriad/share/doc/miriad
 files="index.html style.css"
 
 set -e -x
 
 cd web
-cp -p $files $dest
+scp -p $files $desthost:$destdir
 
-for f in /linux-apps4/miriad/share/doc/miriad/*.ps.gz ; do
-    zcat $f |ps2pdf - $dest$(basename $f |sed -e 's/ps.gz/pdf/')
+for f in $maninst/*.ps.gz ; do
+    d=$destdir$(basename $f |sed -e 's/ps.gz/pdf/')
+    ssh $desthost "zcat |ps2pdf - $d" <$f
 done
