@@ -31,9 +31,9 @@ license          unknown
 
 # Files
 
-master_sites https://www.cfa.harvard.edu/~pwilliam/miriad-macport/
-checksums    rmd160  a6f9502afa9a3ed74570f06459d531e857787b40 \
-             sha256  8becce0716a93bf49b338d0347db9146f1e8e185bfa57d08c59a48cdb9ddcb7b
+master_sites     ${homepage}
+checksums        rmd160  a6f9502afa9a3ed74570f06459d531e857787b40 \
+                 sha256  8becce0716a93bf49b338d0347db9146f1e8e185bfa57d08c59a48cdb9ddcb7b
 
 # Telescope/buffer size selection.
 
