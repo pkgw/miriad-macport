@@ -1,18 +1,29 @@
 #! /bin/bash
-#
-# Well, this is kind of ridiculously simple.... for now!
 
-desthost=cfa0
-destdir=/data/wdocs/pwilliam/www-docs/miriad-macport/
+dest=cfa0:public_html/miriad-macport/
 maninst=/opt/miriad/share/doc/miriad
 files="index.html style.css"
 
-set -e -x
-
+set -e
 cd web
-scp -p $files $desthost:$destdir
+
+workdir=$(mktemp -d)
+echo "work: $workdir"
+
+echo "files: $files"
+cp -p $files $workdir
 
 for f in $maninst/*.ps.gz ; do
-    d=$destdir$(basename $f |sed -e 's/ps.gz/pdf/')
-    ssh $desthost "zcat |ps2pdf - $d" <$f
+    echo "pdf: $(basename $f |sed -e 's/ps.gz/pdf/')"
+    d=$workdir/$(basename $f |sed -e 's/ps.gz/pdf/')
+    zcat $f |ps2pdf - $d
 done
+
+cd $workdir
+echo "dest: $dest"
+echo =======================
+scp -r . $dest
+echo =======================
+cd /
+rm -rf $workdir
+echo ok
