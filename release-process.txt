@@ -1,33 +1,39 @@
 Instructions for pushing out a new MIRIAD MacPort release.
 
-- Create tarball from an unmodified checkout of the CVSHEAD branch of
-  the git mirror
+- Get MIRIAD CVS HEAD to desired release state.
 
-- Fetch MacPorts' version of the Portfile from *link found at bottom of*
-  http://trac.macports.org/browser/trunk/dports/science/miriad/Portfile,
-  and commit any changes they've made.
+- Update git mirror, push to GitHub.
 
-- Update portfile with version, SHA1 and a temporary datecode in
-  the next-update branch. Commit.
+- Create tarball from an **unmodified checkout** of the **CVSHEAD branch** of
+  the git mirror.
 
-- Test out on sleepy, etc. Iterate with temporary datecodes until
-  works.
+- Sync with MacPorts' version of the Portfile:
 
-- Update portfile with final version, datecode, SHA1, RMD160.
-  ('openssl rmd160 {filename}' to generate that hash.)
+  curl -L http://tinyurl.com/8z3kb27 >ports/science/miriad/Portfile
+
+  Commit any changes.
+
+- Update portfile with version, datecode, SHA1, RMD160. Update versions.txt
+  with tarball and git commit SHA1s.  ('openssl rmd160 {filename}')
+
+- Test if desired. Commit when happy.
+
+- Copy release tarball to web directory. Verify SHA1. Update
+  miriad-latest.tar.gz symlink.
 
 - Create diff and file ticket for port update at
   https://trac.macports.org/newticket ; see previous tickets at
   http://tinyurl.com/42voccl . Add "haspatch" and "maintainer" keywords.
 
-- Update metadata and docs:
+- Wait for MacPorts to commit and propagate update
 
-  - versions.txt
-  - "last updated" text in web/index.html
-  - Release History
+- Resync with MacPorts version in case they monkeyed with anything.
+
+
+Updating the webpage:
+
+- Update "Last Updated" and "Release History" in web/index.html
 
 - ./pushweb.sh, proofread.
 
-- Commit changes to miriad-macport to master branch.
-
-- Wait.
+- Commit doc changes.
