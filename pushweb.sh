@@ -1,7 +1,7 @@
 #! /bin/bash
 
 dest=cfa0:public_html/miriad-macport/
-maninst=/opt/miriad/share/doc/miriad
+maninst=/a/share/doc/miriad
 files="index.html style.css"
 
 set -e
