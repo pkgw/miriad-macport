@@ -95,9 +95,7 @@ or <a href="http://trac.macports.org/#MacPortsSupport">the generic MacPorts
 support page</a>.</li>
 
 <li>Open a terminal and run
-<blockquote>
-  <tt>sudo port sync</tt>
-</blockquote>
+<blockquote><code>sudo port sync</code></blockquote>
 to fetch the most up-to-date data from the MacPorts server.</li>
 
 <li>Which telescope will you be reducing data from?
@@ -121,15 +119,11 @@ probably use an <em>empty</em> “variant string” and get started OK.</li>
 <li>Install the software on which MIRIAD depends. Execute the following magic
 command in your terminal, replacing “VARIANTS” with the “variant string” you
 determined above, and putting the whole command on one line:
-<blockquote>
-  <tt>sudo port -u install `port info --depends miriad VARIANTS
-      |perl -ne 'print "$1 " while /port:([^,]+)/g'`</tt>
-</blockquote>
+<blockquote><code>sudo port -u install `port info --depends miriad VARIANTS
+      |perl -ne 'print "$1 " while /port:([^,]+)/g'`</code></blockquote>
 For example, for an ATA user,
-<blockquote>
-  <tt>sudo port -u install `port info --depends miriad +ata
-      |perl -ne 'print "$1 " while /port:([^,]+)/g'`</tt>
-</blockquote>
+<blockquote><code>sudo port -u install `port info --depends miriad +ata
+      |perl -ne 'print "$1 " while /port:([^,]+)/g'`</code></blockquote>
 Your computer will begin to work for a long time. (If the command fails
 instantly, triple–check that you entered it in correctly.) You might take this
 opportunity to read <a href="http://guide.macports.org/">the MacPorts
@@ -144,9 +138,7 @@ system administrator or ask <a href="#contact">the port maintainer</a>
 nicely.</li>
 
 <li>Install MIRIAD itself. In your terminal, run
-<blockquote>
-  <tt>sudo port -vku install miriad VARIANTS</tt>
-</blockquote>
+<blockquote><code>sudo port -vku install miriad VARIANTS</code></blockquote>
 replacing “VARIANTS” as before.</li>
 
 <li>It will take something like half an hour to compile MIRIAD. Once again,
@@ -170,21 +162,17 @@ installation with the following steps:</p>
 <ol>
 <li>Open a terminal.</li>
 <li>Run
-<blockquote>
-  <tt>sudo port sync</tt>
-</blockquote></li>
+<blockquote><code>sudo port sync</code></blockquote></li>
 <li>Run
-<blockquote>
-  <tt>sudo port -vunk upgrade miriad</tt>
-</blockquote>If nothing happens, you already have the most recent
+<blockquote><code>sudo port -vunk upgrade miriad</code></blockquote>If nothing happens, you already have the most recent
 version of MIRIAD that’s been uploaded to MacPorts.</li>
 </ol>
 
 <p>If you get an error, you might try opening a terminal and running:</p>
 
 <ol>
-<li><tt>sudo port selfupdate</tt></li>
-<li><tt>sudo port -u upgrade outdated</tt></li>
+<li><code>sudo port selfupdate</code></li>
+<li><code>sudo port -u upgrade outdated</code></li>
 </ol>
 
 <p>It is also good to run these commands once in a while even if you don’t get
@@ -489,7 +477,7 @@ specifying the <tt>+gcc_select</tt> variant.</p>
 <p>To build MIRIAD with a custom compiler, then, you need to define your
 compiler’s setup in the <tt>gcc_select</tt> system and then select it. This is
 done by creating a file in <tt>/opt/local/etc/select/gcc</tt> named something
-like <tt>custom</tt> of the form:</p>
+like <tt>custom</tt> of the form:
 <blockquote>
 <pre>/path/to/cc
 /path/to/cpp
@@ -499,17 +487,15 @@ like <tt>custom</tt> of the form:</p>
 -
 /path/to/fc</pre>
 </blockquote>
-<p>Each line in the file specifies the path to a standard compiler executable.
+Each line in the file specifies the path to a standard compiler executable.
 Most notably, the last line specifies the Fortran compiler to use. (The two
 lines with dashes point to the Java compiler and the code coverage tool,
 typically gcj and gcov. These are not used when compiling MIRIAD.) <em>If you
 mix and match executables from different compiler versions, your build will
 almost assuredly fail.</em> Then, “select” your new compiler by running a
-command such as</p>
-<blockquote>
-  <tt>gcc_select custom</tt>
-</blockquote>
-<p>This support should be sufficient for you to attempt building the MIRIAD
+command such as
+<blockquote><code>gcc_select custom</code></blockquote>
+This support should be sufficient for you to attempt building the MIRIAD
 MacPort with any compiler you want, but be prepared for a lot of frustration
 and wasted time unless you know exactly what you’re doing.</p>
 
