@@ -1,4 +1,4 @@
-Instructions for pushing out a new MIRIAD MacPort release.
+Creating a new MIRIAD MacPort release:
 
 - Get MIRIAD CVS HEAD to desired release state.
 
@@ -8,9 +8,7 @@ Instructions for pushing out a new MIRIAD MacPort release.
   the git mirror.
 
 - Sync with MacPorts' version of the Portfile:
-
-  curl -L http://tinyurl.com/8z3kb27 >ports/science/miriad/Portfile
-
+    curl -L http://tinyurl.com/8z3kb27 >ports/science/miriad/Portfile
   Commit any changes.
 
 - Update portfile with version, datecode, SHA1, RMD160. Update versions.txt
@@ -33,6 +31,8 @@ Instructions for pushing out a new MIRIAD MacPort release.
 Updating the webpage:
 
 - Update "Last Updated" and "Release History" in web/index.html
+
+- Connect to CfA VPN if not on-site.
 
 - ./pushweb.sh, proofread.
 
