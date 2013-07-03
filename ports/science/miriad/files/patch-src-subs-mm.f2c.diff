@@ -1,0 +1,12 @@
+--- src/subs/mm.f2c.orig	2013-07-02 23:40:48.625841411 -0400
++++ src/subs/mm.f2c	2013-07-02 23:47:44.601431813 -0400
+@@ -31,6 +31,9 @@
+ #endif
+ #include "miriad.h"
+ 
++/* MacPorts patch: print debugging info if allocation bug persists */
++#define DEBUG 1
++
+ /* The size of all data items should be a multiple of the base unit.
+    The base unit is preferably larger than 1 byte to help access
+    larger memory areas on machines better than 32 bit addressing.	*/
