@@ -11,7 +11,7 @@ Creating a new MIRIAD MacPort release:
     curl -L http://tinyurl.com/8z3kb27 >ports/science/miriad/Portfile
   Commit any changes.
 
-- Update portfile with version, datecode, SHA1, RMD160. Update versions.txt
+- Update portfile with version, datecode, RMD160, SHA256. Update versions.txt
   with tarball and git commit SHA1s.  ('openssl rmd160 {filename}')
 
 - Test if desired. Commit when happy.
