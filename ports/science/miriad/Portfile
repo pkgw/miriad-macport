@@ -13,7 +13,6 @@ conflicts        pgplot
 set relver       4.3.8
 set tardate      20140618
 version          ${relver}.${tardate}
-revision         1
 platforms        darwin
 categories       science
 maintainers      newton.cx:peter
@@ -22,13 +21,8 @@ long_description MIRIAD, the Multichannel Imaging, Reconstruction, Analysis, \
                  and Display package, is a suite of tools for analyzing radio \
                  astronomical observations, from raw data to imaging.
 homepage         https://www.cfa.harvard.edu/~pwilliam/miriad-macport/
-
-# The license to MIRIAD is somewhat indeterminate, since it has had
-# many contributors working at many academic institutions with various
-# copyright assignment and licensing policies. It's pretty important
-# to straighten this out at some point.
-
-license          unknown
+# Based on the DISCLAIMER shipped with ATNF miriad:
+license          gpl-2+
 
 # Files
 
