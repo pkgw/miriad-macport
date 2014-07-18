@@ -11,7 +11,7 @@ PortGroup        xcodeversion 1.0
 name             miriad
 conflicts        pgplot
 set relver       4.3.8
-set tardate      20140618
+set tardate      20140718
 version          ${relver}.${tardate}
 platforms        darwin
 categories       science
@@ -27,8 +27,8 @@ license          gpl-2+
 # Files
 
 master_sites     ${homepage}
-checksums        rmd160  59067e2f2c8a7cdaeb0d37388e5aef84cff64bff \
-                 sha256  3a3cd7aea16c73fe8a40e647a417f29121ac0a5c8fd5de80e351595ed45e49cd
+checksums        rmd160  a63a6a3ff74bf97fd9ffc42c8d437591f24e6b65 \
+                 sha256  9e3b79e8992d78669e39acec53aa6323644b45dc368f22cbd021b00b82696324
 
 # Telescope/buffer size selection.
 
