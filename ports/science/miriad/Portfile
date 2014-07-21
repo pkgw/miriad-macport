@@ -21,8 +21,9 @@ long_description MIRIAD, the Multichannel Imaging, Reconstruction, Analysis, \
                  and Display package, is a suite of tools for analyzing radio \
                  astronomical observations, from raw data to imaging.
 homepage         https://www.cfa.harvard.edu/~pwilliam/miriad-macport/
+
 # Based on the DISCLAIMER shipped with ATNF miriad:
-license          gpl-2+
+license          GPL-2+
 
 # Files
 
