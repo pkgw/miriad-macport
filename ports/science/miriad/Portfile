@@ -3,6 +3,7 @@
 
 PortSystem       1.0
 PortGroup        xcodeversion 1.0
+PortGroup        compilers 1.0
 
 # Miriad releases are very infrequent, so our ports will be based on
 # distributions made from CVS snapshots.  We add a sub-version number
@@ -11,11 +12,11 @@ PortGroup        xcodeversion 1.0
 name             miriad
 conflicts        pgplot
 set relver       4.3.8
-set tardate      20141105
+set tardate      20150520
 version          ${relver}.${tardate}
 platforms        darwin
 categories       science
-maintainers      newton.cx:peter
+maintainers      newton.cx:peter openmaintainer
 description      MIRIAD, an analysis package for radio astronomical data
 long_description MIRIAD, the Multichannel Imaging, Reconstruction, Analysis, \
                  and Display package, is a suite of tools for analyzing radio \
@@ -28,17 +29,20 @@ license          GPL-2+
 # Files
 
 master_sites     ${homepage}
-checksums        rmd160  8dac0c2878349235a463d74b66ad10a067881eb1 \
-                 sha256  8afa0df99b89280a0427845f53b847f83c7aa960a7e6c5a7f6e1387740556a8d
+checksums        rmd160  a9e4187672472831832ec90a07be56fcb4fdad54 \
+                 sha256  6b55e2b0661b1f85b3bfb84117e3b5637df260d090303e5f8ff7f2de4387c39f
 
 # Telescope/buffer size selection.
 
-variant ata conflicts carma sma wsrt description {use buffer sizes appropriate to ATA data} {}
-variant carma conflicts ata sma wsrt description {use buffer sizes appropriate to CARMA data} {}
-variant sma conflicts ata carma wsrt description {use buffer sizes appropriate to SMA data} {}
-variant wsrt conflicts ata carma sma description {use buffer sizes appropriate to WSRT data} {}
+variant ant256 conflicts ata carma sma wsrt description {use buffer sizes appropriate for a 256-antenna array} {}
+variant ata conflicts ant256 carma sma wsrt description {use buffer sizes appropriate to ATA data} {}
+variant carma conflicts ant256 ata sma wsrt description {use buffer sizes appropriate to CARMA data} {}
+variant sma conflicts ant256 ata carma wsrt description {use buffer sizes appropriate to SMA data} {}
+variant wsrt conflicts ant256 ata carma sma description {use buffer sizes appropriate to WSRT data} {}
 
-if {[variant_isset ata]} {
+if {[variant_isset ant256]} {
+    set thescope big1
+} elseif {[variant_isset ata]} {
     set thescope ata
 } elseif {[variant_isset wsrt]} {
     set thescope wsrt
@@ -54,28 +58,16 @@ if {[variant_isset ata]} {
 # to build with better-optimizing proprietary compilers, which we allow
 # via the gcc_select mechanism.
 
-variant gcc46 conflicts gcc47 gcc48 gcc49 gcc_select description {Build with gcc/gfortran 4.6} {
-    configure.compiler  macports-gcc-4.6
-}
+compilers.choose     fc f77
+compilers.set_variants_conflict   gcc_select
+compilers.setup
 
-variant gcc47 conflicts gcc46 gcc48 gcc49 gcc_select description {Build with gcc/gfortran 4.7} {
-    configure.compiler  macports-gcc-4.7
-}
-
-variant gcc48 conflicts gcc46 gcc47 gcc49 gcc_select description {Build with gcc/gfortran 4.8} {
-    configure.compiler  macports-gcc-4.8
-}
-
-variant gcc49 conflicts gcc46 gcc47 gcc48 gcc_select description {Build with gcc/gfortran 4.9} {
-    configure.compiler  macports-gcc-4.9
-}
-
-variant gcc_select conflicts gcc46 gcc47 gcc48 gcc49 description {Build with compilers chosen via gcc_select -- experts only} {
+variant gcc_select conflicts ${compilers.variants} description {Build with compilers chosen via gcc_select -- experts only} {
     configure.compiler  macports-gcc
 }
 
-if {![variant_isset gcc46] && ![variant_isset gcc47] && ![variant_isset gcc48] && ![variant_isset gcc49] && ![variant_isset gcc_select]} {
-    default_variants +gcc48
+if {![fortran_variant_isset] && ![variant_isset gcc_select]} {
+    default_variants-append  +${compilers.gcc_default}
 }
 
 universal_variant    no
